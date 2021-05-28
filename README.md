@@ -15,7 +15,7 @@ cd /opt/fancy-ancy
 
 ## Modify variables then deploy
 vim hosts.ini
-sudo bash deploy.sh
+sudo bash deploy_locally.sh
 ```
 
 ### Deploys
