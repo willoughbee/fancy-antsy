@@ -1,0 +1,39 @@
+
+- name: Updating
+  shell: apt-get update
+
+- name: Installing dirsearch
+  script: scripts/install-dirsearch.sh
+  ignore_errors: True
+
+- name: Clone and install BruteX
+  shell: git clone https://github.com/1N3/BruteX.git /opt/BruteX; cd /opt/BruteX; chmod +x install.sh; bash install.sh
+  ignore_errors: True
+
+- name: Clone and install Aquatone
+  script: scripts/install-aquatone.sh
+  ignore_errors: True
+
+- name: Clone and install BlackWidow
+  script: scripts/install-BlackWidow.sh
+  ignore_errors: True
+
+- name: Clone and install Kerbrute
+  script: scripts/install-kerbrute.sh
+  ignore_errors: True
+
+- name: Clone and install Dotnet & Covenant
+  script: scripts/install-dotnet-covenant.sh
+  ignore_errors: True
+
+- name: Clone and install mitm6 & impacket
+  script: scripts/install-mitm6-impacket.sh
+  ignore_errors: True
+
+- name: Install bettercap
+  apt:
+    name: bettercap
+    state: present
+
+- name: Update the database
+  shell: updatedb

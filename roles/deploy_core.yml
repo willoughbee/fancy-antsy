@@ -1,0 +1,19 @@
+
+- name: Update
+  apt:
+    update_cache: yes
+
+#- name: Installing docker
+#  script: scripts/install-docker.sh
+
+- name: Install git
+  apt:
+    name: git
+    state: present
+
+- name: Install pip
+  script: scripts/install-pip.sh
+
+- name: Update the database
+  shell: updatedb
+

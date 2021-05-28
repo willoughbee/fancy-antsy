@@ -1,0 +1,28 @@
+
+- name: Update
+  shell: apt-get update
+  ignore_errors: True
+
+- name: Clone Invoke-Obfuscation
+  shell: git clone https://github.com/danielbohannon/Invoke-Obfuscation.git /opt/Invoke-Obfuscation
+  ignore_errors: True
+
+- name: Clone QSearchSploit
+  shell: git clone https://github.com/M507/QSearchSploit.git /opt/QSearchSploit; cd /opt/QSearchSploit; chmod +x setup.sh; bash setup.sh
+  ignore_errors: True
+
+- name: Install Bloodhound
+  shell: pip3 install bloodhound
+  ignore_errors: True
+
+- name: Clone winPEAS
+  shell: git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite /opt/PEAS
+  ignore_errors: True
+
+- name: Git-dumper install
+  shell: pip3 install git-dumper
+  ignore_errors: True
+
+- name: Update the database
+  shell: updatedb
+  ignore_errors: True

@@ -1,0 +1,16 @@
+- hosts: kali
+  tasks:
+    # Install the core packages
+    - import_tasks: roles/deploy_core.yml
+    # Scripts deploy - Each script is for a tool
+    # Install scripts are in the dir Scripts
+    - import_tasks: roles/deploy_scripts.yml
+    # Windows Red Team tools
+    - import_tasks: roles/deploy_win_scripts.yml
+    # Extra good stuff :)
+    - import_tasks: roles/deploy_extra_scripts.yml
+    # Deploy leaked/SecList wordlists
+    - import_tasks: roles/deploy_wordlists.yml
+    # Deploy bins
+    - import_tasks: roles/deploy_bins.yml
+    - import_tasks: roles/wrap-up.yml

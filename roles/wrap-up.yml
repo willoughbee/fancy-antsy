@@ -1,0 +1,8 @@
+
+- name: Update
+  shell: updatedb
+  ignore_errors: True
+
+#- name: oh mah zeeshhhh
+#  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#  ignore_errors: True

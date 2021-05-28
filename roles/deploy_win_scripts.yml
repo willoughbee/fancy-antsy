@@ -1,0 +1,22 @@
+
+- name: Update
+  apt:
+    update_cache: yes
+
+# Git is required
+- name: Clone PowerSploit
+  shell: git clone https://github.com/PowerShellMafia/PowerSploit.git /opt/PowerSploit
+  ignore_errors: True
+
+# Git is required
+- name: Clone and install Unicorn
+  shell: git clone https://github.com/trustedsec/unicorn.git /opt/unicorn ; cd /opt/unicorn; chmod +x unicorn.py
+  ignore_errors: True
+
+  # Git is required
+- name: Clone and install Evil Winrm
+  shell: cd /opt/;git clone https://github.com/Hackplayers/evil-winrm.git; sudo gem install winrm winrm-fs colorize stringio
+  ignore_errors: True
+
+- name: Update the database
+  shell: updatedb
